@@ -182,6 +182,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundleFetch 'vim-airline/vim-airline'
 NeoBundleFetch 'vim-airline/vim-airline-themes'
+NeoBundleFetch 'ludovicchabant/vim-gutentags'
 
 call neobundle#end()
 
