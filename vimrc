@@ -180,8 +180,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
+NeoBundleFetch 'vim-airline/vim-airline'
+NeoBundleFetch 'vim-airline/vim-airline-themes'
+
 call neobundle#end()
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+
+" Vim-Airline configurations:
+let g:airline#extensions#tabline#enabled = 1
