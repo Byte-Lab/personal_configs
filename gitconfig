@@ -1,0 +1,8 @@
+[core]
+	editor = vim
+[user]
+	name = David Vernet
+	email = void@manifault.com
+[color]
+	status = auto
+	diff = auto
