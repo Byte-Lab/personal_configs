@@ -209,14 +209,6 @@ let g:my_vimrc_directory = '/home/dvernet/.personal_configs/vim/'
 
 let g:airline_theme='seoul256'
 
-" CtrlP configuration:
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-    \ 'file': '\v\.(exe|so|dll|o|swp)$',
-    \ 'link': 'some_bad_symbolic_links',
-\ }
-
 " Helper function for sourcing a local vim directory.
 function! SourceLocal(relativePath)
   let root = "$HOME/.personal_configs/vim"
@@ -224,5 +216,6 @@ function! SourceLocal(relativePath)
   exec 'source ' . fullPath
 endfunction
 
-" Gutentags:
+" Configuring plugins:
 call SourceLocal("gutentags.vim")
+call SourceLocal("ctrlp.vim")
