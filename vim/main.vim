@@ -1,15 +1,7 @@
-" URL: https://vim.wikia.com/wiki/Example_vimrc
-" Authors: https://vim.wikia.com/wiki/Vim_on_Libera_Chat
-" Description: A minimal, but feature rich, example .vimrc. If you are a
-"              newbie, basing your first .vimrc on this file is a good choice.
-"              If you're a more advanced user, building your own .vimrc based
-"              on this file is still a good idea.
-
-"------------------------------------------------------------
-" Features {{{1
+" My main vim configuration file.
 "
-" These options and commands enable some very useful features in Vim, that
-" no user should have to live without.
+" Contains mostly default options that I want for all configs, and some code
+" that I copied from https://vim.wikia.com/wiki/Example_vimrc.
 
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
@@ -19,9 +11,6 @@ set nocompatible
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
 filetype indent plugin on
-
-" Enable syntax highlighting
-syntax on
 
 "------------------------------------------------------------
 " Must have options {{{1
@@ -84,17 +73,12 @@ set backspace=indent,eol,start
 " the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
 
-" Stop certain movements from always going to the first character of a line.
-" While this behaviour deviates from that of Vi, it does what most users
-" coming from other editors would expect.
-set nostartofline
-
 " Display the cursor position on the last line of the screen or in the status
 " line of a window
 set ruler
 
 " Always display the status line, even if only one window is displayed
-"set laststatus=2
+set laststatus=2
 
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
@@ -102,11 +86,6 @@ set confirm
 
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
-
-" And reset the terminal code for the visual bell. If visualbell is set, and
-" this line is also included, vim will neither flash nor beep. If visualbell
-" is unset, this does nothing.
-set t_vb=
 
 " Enable use of the mouse for all modes
 if has('mouse')
@@ -122,9 +101,6 @@ set number
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
-
-" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
 
 
 "------------------------------------------------------------
@@ -189,8 +165,6 @@ call neobundle#end()
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-filetype indent plugin on
-
 " Enable syntax highlighting
 syntax on
 
@@ -198,17 +172,15 @@ syntax on
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-
-" Custom key bindings.
-map <leader>tab :set tabstop=4<CR>:set noexpandtab<CR>
-map <leader>space :set shiftwidth=4<CR>:set softtabstop=4<CR>:set expandtab<CR>
-
 " Helper function for sourcing a local vim directory.
 function! SourceLocal(relativePath)
   let root = "$HOME/.personal_configs/vim"
   let fullPath = root . '/'. a:relativePath
   exec 'source ' . fullPath
 endfunction
+
+" Custom keybindings:
+call SourceLocal("keybindings.vim")
 
 " Configuring plugins:
 call SourceLocal("gutentags.vim")
