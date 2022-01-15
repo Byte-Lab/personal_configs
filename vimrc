@@ -181,6 +181,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'ludovicchabant/vim-gutentags'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 
 call neobundle#end()
 
@@ -197,12 +198,22 @@ syntax on
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
+
+" Custom key bindings.
+map <leader>tab :set tabstop=4<CR>:set noexpandtab<CR>
+map <leader>space :set shiftwidth=4<CR>:set softtabstop=4<CR>:set expandtab<CR>
+
 " Vim-Airline configurations:
-let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_theme='seoul256'
 
-map <leader>tab :set tabstop=4<CR>:set noexpandtab<CR>
+" CtrlP configuration:
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll|o|swp)$',
+    \ 'link': 'some_bad_symbolic_links',
+\ }
 
 
 " Configure gutentags projects. Much of this is taken from the following page:
