@@ -203,12 +203,6 @@ let mapleader=" "
 map <leader>tab :set tabstop=4<CR>:set noexpandtab<CR>
 map <leader>space :set shiftwidth=4<CR>:set softtabstop=4<CR>:set expandtab<CR>
 
-let g:my_vimrc_directory = '/home/dvernet/.personal_configs/vim/'
-
-" Vim-Airline configurations:
-
-let g:airline_theme='seoul256'
-
 " Helper function for sourcing a local vim directory.
 function! SourceLocal(relativePath)
   let root = "$HOME/.personal_configs/vim"
@@ -219,3 +213,4 @@ endfunction
 " Configuring plugins:
 call SourceLocal("gutentags.vim")
 call SourceLocal("ctrlp.vim")
+call SourceLocal("airline.vim")
