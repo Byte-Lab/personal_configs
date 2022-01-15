@@ -18,14 +18,10 @@ set nocompatible
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
-if has('filetype')
-  filetype indent plugin on
-endif
+filetype indent plugin on
 
 " Enable syntax highlighting
-if has('syntax')
-  syntax on
-endif
+syntax on
 
 "------------------------------------------------------------
 " Must have options {{{1
@@ -98,7 +94,7 @@ set nostartofline
 set ruler
 
 " Always display the status line, even if only one window is displayed
-set laststatus=2
+"set laststatus=2
 
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
@@ -147,6 +143,8 @@ set expandtab
 "set shiftwidth=4
 "set tabstop=4
 
+" Wrap columns to 80 characters.
+set tw=80
 
 "------------------------------------------------------------
 " Mappings {{{1
@@ -190,6 +188,15 @@ call neobundle#end()
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+filetype indent plugin on
+
+" Enable syntax highlighting
+syntax on
+
 
 " Vim-Airline configurations:
 let g:airline#extensions#tabline#enabled = 1
+
+let g:airline_theme='seoul256'
+
+map <Space>tab :set tabstop=4<CR>:set noexpandtab<CR>
