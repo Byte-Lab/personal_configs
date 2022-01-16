@@ -9,8 +9,7 @@ let mapleader=" "
 
 " Helper function for sourcing a local vim directory.
 function! SourceLocal(relativePath)
-  let root = "$HOME/.personal_configs/vim"
-  let fullPath = root . '/'. a:relativePath
+  let fullPath = $PERSONAL_VIM_DIR . '/'. a:relativePath
   exec 'source ' . fullPath
 endfunction
 
