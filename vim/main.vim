@@ -26,6 +26,6 @@ call SourceLocal("defaults.vim")
 call SourceLocal("keybindings.vim")
 
 " Configuring plugins:
-call SourceLocal("gutentags.vim")
 call SourceLocal("ctrlp.vim")
+call SourceLocal("gutentags.vim")
 call SourceLocal("airline.vim")
