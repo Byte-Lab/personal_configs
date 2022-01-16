@@ -1,8 +1,12 @@
 # vim: syntax=bash
-# Gmail over IMAP
+# Setting up mutt identity
 
-# Note:
-# To create a file with an encrypted password, use the following
+set realname = "David Vernet"
+set from = "void@manifault.com"
+
+# Login and Passwords
+#
+# Note: # To create a file with an encrypted password, use the following
 # incantation:
 # echo -n 'mypassword' | gpg --encrypt -r void@manifault.com > ~/.personal_configs/mutt/password.gpg
 
@@ -14,3 +18,8 @@ set imap_pass = $my_password
 
 set smtp_url = "smtp://dcvernet@smtp.gmail.com:587/"
 set smtp_pass = $my_password
+
+# Alternate addresses:
+alternates "dcvernet@gmail.com"
+alternates "@davidvernet\.com$"
+alternates "@manifault\.com$"

@@ -5,26 +5,17 @@
 # https://gitlab.com/muttmua/mutt/-/blob/master/contrib/sample.muttrc-starter.
 #
 
-###############
-# Identity
-#
-# Alternate addresses:
-set realname = "David Vernet"
-set from = "void@manifault.com"
-alternates "dcvernet@gmail.com"
-alternates "@davidvernet\.com$"
-alternates "@manifault\.com$"
+# Default settings:
+source "$PERSONAL_MUTT_DIR/defaults.rc"
 
-# Gmail config setup:
-source "$PERSONAL_MUTT_DIR/manifault.rc"
+# Gmail / identity config setup:
+source "$PERSONAL_MUTT_DIR/identity.rc"
 
 # Sidebar config:
 source "$PERSONAL_MUTT_DIR/sidebar.rc"
 
 # Manual bindings:
 source "$PERSONAL_MUTT_DIR/keybindings.rc"
-
-set reverse_name
 
 # Automatically pull all mailboxes from IMAP.
 set imap_check_subscribed
@@ -41,9 +32,6 @@ set mail_check = 30
 ignore *
 unignore From Message-ID Date To Cc Bcc Subject
 
-set pager_stop
-unset markers
-
 # Prefer plain text to html.
 # However, for brain dead clients that bundle attachments inside a
 # multipart/alternative, prefer that alternative.
@@ -56,22 +44,8 @@ mime_lookup application/octet-stream
 # text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
 auto_view text/html
 
-###############
-# Index settings
-#
-set quit = ask-yes
-set sort = threads
-
 # Remember to `mkdir -p ~/.mutt/hcache` first:
 set header_cache= "~/.mutt/hcache"
-
-###############
-# Message composition settings
-#
-set edit_headers
-
-# Obviously
-set editor = "vim"
 
 set mime_type_query_command = "xdg-mime query filetype"
 

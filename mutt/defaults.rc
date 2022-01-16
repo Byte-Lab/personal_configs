@@ -1,0 +1,15 @@
+# vim: syntax=bash
+#
+# The default settings for the mailer.
+
+# Don't move to the next message once you reach the end of a message.
+set pager_stop
+
+# Sort messages with the most recently received starting at the top.
+set sort = reverse-date-received
+
+# Allow editing headers when composing a message.
+set edit_headers
+
+# Obviously
+set editor = "vim"
