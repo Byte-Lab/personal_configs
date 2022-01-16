@@ -3,7 +3,7 @@
 # NeoMutt sidebar configuration
 
 set sidebar_visible
-set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S "
 
 # Checks for mail stats (read, unread, etc) in the sidebar. This is pretty
 # performance intensive, so we stick with a longer interval for checking.
@@ -20,3 +20,7 @@ set sidebar_width = 35
 bind index,pager . sidebar-next
 bind index,pager , sidebar-prev
 bind index,pager \' sidebar-open
+
+# Colors:
+color sidebar_divider blue blue
+color sidebar_spoolfile green green
