@@ -53,3 +53,6 @@ set syntax=y
 
 " Enable number
 set number
+
+" Wrap text to 80 characters.
+set tw=80
