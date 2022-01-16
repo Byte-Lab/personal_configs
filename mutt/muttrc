@@ -15,7 +15,11 @@ alternates "dcvernet@gmail.com"
 alternates "@davidvernet\.com$"
 alternates "@manifault\.com$"
 
-source "$HOME/.personal_configs/mutt/manifault.rc"
+# Gmail config setup:
+source "$PERSONAL_MUTT_DIR/manifault.rc"
+
+# Sidebar config:
+source "$PERSONAL_MUTT_DIR/sidebar.rc"
 
 set reverse_name
 
