@@ -16,3 +16,6 @@ source "$PERSONAL_MUTT_DIR/sidebar.rc"
 
 # Manual bindings:
 source "$PERSONAL_MUTT_DIR/keybindings.rc"
+
+# Colors:
+source "$PERSONAL_MUTT_DIR/colors.rc"

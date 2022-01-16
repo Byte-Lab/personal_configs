@@ -40,3 +40,9 @@ set mime_type_query_command = "xdg-mime query filetype"
 # lbdb is a versatile contact query tool.
 # Invoke via ctrl-t in an address prompt
 set query_command = "/usr/bin/lbdbq"
+
+# Set the format of a message in the index.
+#
+# See http://www.mutt.org/doc/manual/#index-format for how to reformat it to
+# your preference.
+set index_format = " %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
