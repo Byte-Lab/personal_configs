@@ -8,9 +8,8 @@ map <leader>space :set shiftwidth=4<CR>:set softtabstop=4<CR>:set expandtab<CR>
 map <leader>paste :set paste<CR>
 map <leader>nopaste :set nopaste<CR>
 
-" hl vs. nohl:
-map <leader>hl :set hl<CR>
-map <leader>nohl :set nohl<CR>
+" Remove highlighting:
+map <leader>nohl :nohl<CR>
 
 " number vs. nonumber:
 map <leader>nonum :set nonumber<CR>

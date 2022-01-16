@@ -21,6 +21,9 @@ source "$PERSONAL_MUTT_DIR/manifault.rc"
 # Sidebar config:
 source "$PERSONAL_MUTT_DIR/sidebar.rc"
 
+# Manual bindings:
+source "$PERSONAL_MUTT_DIR/keybindings.rc"
+
 set reverse_name
 
 # Automatically pull all mailboxes from IMAP.

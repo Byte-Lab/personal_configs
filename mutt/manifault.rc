@@ -1,9 +1,16 @@
 # vim: syntax=bash
 # Gmail over IMAP
 
-set imap_user = "dcvernet@gmail.com"
-
+# Note:
 # To create a file with an encrypted password, use the following
 # incantation:
 # echo -n 'mypassword' | gpg --encrypt -r void@manifault.com > ~/.personal_configs/mutt/password.gpg
-set imap_pass = "`gpg --batch -q --decrypt -r void@manifault.com ~/.personal_configs/mutt/password.gpg`"
+
+# IMAP / SMTP password.
+set my_password = "`gpg --batch -q --decrypt -r void@manifault.com ~/.personal_configs/mutt/password.gpg`"
+
+set imap_user = "dcvernet@gmail.com"
+set imap_pass = $my_password
+
+set smtp_url = "smtp://dcvernet@smtp.gmail.com:587/"
+set smtp_pass = $my_password

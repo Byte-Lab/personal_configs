@@ -1,0 +1,21 @@
+# vim: syntax=bash
+
+#####################
+# Vim like bindings #
+#####################
+
+# binding q for exiting all menus
+bind index,generic,compose,attach,pager x exit
+
+# binding ZZ like in vim to quit, only in index
+bind index Z noop
+bind index ZZ quit
+
+# just like vi and less
+bind index g noop
+bind index gg first-entry
+bind index G last-entry
+
+# Replies:
+bind index,pager r reply
+bind index,pager R group-reply
