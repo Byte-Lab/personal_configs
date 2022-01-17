@@ -22,8 +22,6 @@ NeoBundle 'ludovicchabant/vim-gutentags'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'plasticboy/vim-markdown'
 
 call neobundle#end()
 
