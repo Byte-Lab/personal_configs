@@ -56,3 +56,8 @@ set number
 
 " Wrap text to 80 characters.
 set tw=80
+
+" Make 4-wide spaces the default.
+set shiftwidth=4
+set softtabstop=4
+set expandtab
