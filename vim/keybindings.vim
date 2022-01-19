@@ -14,3 +14,9 @@ map <leader>nohl :nohl<CR>
 " number vs. nonumber:
 map <leader>nonum :set nonumber<CR>
 map <leader>num :set number<CR>
+
+# Set a more narrow width for upstream linux emails.
+nmap <leader>lkw :set textwidth=75<CR>
+
+# For when you're hacking the linux kernel itself.
+nmap <leader>lkst :set noexpandtab tabstop=8 shiftwidth=8<CR>

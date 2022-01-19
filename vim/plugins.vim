@@ -19,9 +19,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ludovicchabant/vim-gutentags'
+NeoBundle 'universal-ctags/ctags'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
+NeoBundle 'preservim/nerdtree'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBUndle 'majutsushi/tagbar'
 
 call neobundle#end()
 

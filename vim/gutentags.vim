@@ -11,6 +11,21 @@ let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
 let g:gutentags_enabled = 1
 set statusline+=%{gutentags#statusline()}
 
+#########################
+# Gutentags keybindings #
+#########################
+
+# Jump up in stack.
+nmap <leader>o <c-o>
+
+# Search for all instances of a tag's definition.
+nmap <leader>ts g]
+nmap <leader>tg g<c-]>
+nmap <leader>tgt <C-w><C-]><C-w>T
+
+# Search for a specific instance of a tag's definition.
+nmap <leader>fg <c-]>
+
 let g:gutentags_ctags_extra_args = [
       \ '--tag-relative=yes',
       \ '--fields=+ailmnS',
