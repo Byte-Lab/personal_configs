@@ -39,3 +39,7 @@ unset trash
 # msmtp is a solid SMTP client.
 # mutt also has built-in SMTP, or you can use an MTA like exim4 or postfix.
 set sendmail = "/usr/bin/msmtp"
+
+# TLS all the way
+set ssl_starttls = yes
+set ssl_force_tls = yes

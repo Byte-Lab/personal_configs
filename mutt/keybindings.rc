@@ -1,5 +1,8 @@
 # vim: syntax=bash
 
+# Macro for archiving emails.
+macro index,pager A "<save-message>=Archive<enter>" "Archive Message"
+
 #####################
 # Vim like bindings #
 #####################
@@ -12,10 +15,18 @@ bind index Z noop
 bind index ZZ quit
 
 # just like vi and less
-bind index g noop
+bind index,pager g noop
 bind index gg first-entry
 bind index G last-entry
 
 # Replies:
 bind index,pager r reply
 bind index,pager R group-reply
+
+# Going to specific folders.
+macro index,pager gi "<change-folder>=INBOX<enter>"   "Open Inbox"
+macro index,pager gc "<change-folder>?"               "Open mailbox search"
+
+# Bind d to noop to avoid aliasing 'd' with 'dd'
+bind index,pager  d  noop
+macro index,pager dd "<delete-message><sync-mailbox>" "Move message to trash"
