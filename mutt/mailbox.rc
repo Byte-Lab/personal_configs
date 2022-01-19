@@ -16,7 +16,7 @@ set my_password = "`gpg --batch -q --decrypt -r void@manifault.com ~/.personal_c
 set imap_user = "dcvernet@gmail.com"
 set imap_pass = $my_password
 
-set smtp_url = "smtp://dcvernet@smtp.gmail.com:587/"
+set smtp_url = "smtp://dcvernet@$MUTT_SMTP_URL/"
 set smtp_pass = $my_password
 
 # Alternate addresses:
@@ -27,7 +27,7 @@ alternates "@manifault\.com$"
 # Automatically pull all mailboxes from IMAP.
 set imap_check_subscribed
 
-set folder = imaps://imap.gmail.com/
+set folder = "imaps://$imap_user:$imap_pass@$MUTT_IMAP_URL"
 set spoolfile = "+INBOX"
 
 # Don't set the record folder, Gmail auto-stores in Sent Mail.
