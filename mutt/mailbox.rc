@@ -41,5 +41,4 @@ unset trash
 set sendmail = "/usr/bin/msmtp"
 
 # TLS all the way
-set ssl_starttls = yes
 set ssl_force_tls = yes
