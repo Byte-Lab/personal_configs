@@ -64,3 +64,6 @@ set expandtab
 
 " Make searching case-insensitive.
 set ignorecase
+
+# How much information should be stored after logging off of vim.
+set viminfo+=<4096
