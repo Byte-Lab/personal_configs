@@ -26,7 +26,7 @@ NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'preservim/nerdtree'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'flazz/vim-colorschemes'
-NeoBUndle 'majutsushi/tagbar'
+NeoBundle 'majutsushi/tagbar'
 
 call neobundle#end()
 
