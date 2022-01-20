@@ -27,7 +27,7 @@ alternates "@manifault\.com$"
 # Automatically pull all mailboxes from IMAP.
 set imap_check_subscribed
 
-set folder = "imaps://$imap_user:$imap_pass@$MUTT_IMAP_URL"
+set folder = "imaps://$MUTT_IMAP_URL"
 set spoolfile = "+INBOX"
 
 # Don't set the record folder, Gmail auto-stores in Sent Mail.
