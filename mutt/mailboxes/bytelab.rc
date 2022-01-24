@@ -1,0 +1,20 @@
+# vim: syntax=bash
+# Setting up mutt identity
+
+set realname = "David Vernet"
+set from = "david@bytelab.codes"
+
+# Login and Passwords
+#
+# Note: # To create a file with an encrypted password, use the following
+# incantation:
+# echo -n 'mypassword' | gpg --encrypt -r void@manifault.com > ~/.personal_configs/mutt/mailboxes/bytelab.gpg
+
+# IMAP / SMTP password.
+set my_password = "`gpg --batch -q --decrypt -r void@manifault.com ~/.personal_configs/mutt/mailboxes/bytelab.gpg`"
+
+set imap_user = "david@bytelab.codes"
+set imap_pass = $my_password
+
+set smtp_url = "smtp://david@bytelab.codes@$MUTT_SMTP_URL/"
+set smtp_pass = $my_password

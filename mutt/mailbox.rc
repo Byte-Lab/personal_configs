@@ -1,29 +1,6 @@
 # vim: syntax=bash
 # Setting up mutt identity
 
-set realname = "David Vernet"
-set from = "void@manifault.com"
-
-# Login and Passwords
-#
-# Note: # To create a file with an encrypted password, use the following
-# incantation:
-# echo -n 'mypassword' | gpg --encrypt -r void@manifault.com > ~/.personal_configs/mutt/password.gpg
-
-# IMAP / SMTP password.
-set my_password = "`gpg --batch -q --decrypt -r void@manifault.com ~/.personal_configs/mutt/password.gpg`"
-
-set imap_user = "dcvernet@gmail.com"
-set imap_pass = $my_password
-
-set smtp_url = "smtp://dcvernet@$MUTT_SMTP_URL/"
-set smtp_pass = $my_password
-
-# Alternate addresses:
-alternates "dcvernet@gmail.com"
-alternates "@davidvernet\.com$"
-alternates "@manifault\.com$"
-
 # Automatically pull all mailboxes from IMAP.
 set imap_check_subscribed
 
@@ -42,3 +19,6 @@ set sendmail = "/usr/bin/msmtp"
 
 # TLS all the way
 set ssl_force_tls = yes
+
+# Source the mailbox we're using at the moment.
+source "$PWD/mailboxes/$MUTT_MAILBOX.rc"
