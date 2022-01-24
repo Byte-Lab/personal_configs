@@ -21,4 +21,4 @@ set sendmail = "/usr/bin/msmtp"
 set ssl_force_tls = yes
 
 # Source the mailbox we're using at the moment.
-source "$PWD/mailboxes/$MUTT_MAILBOX.rc"
+source "$PERSONAL_MUTT_DIR/mailboxes/$MUTT_MAILBOX.rc"
