@@ -7,6 +7,7 @@ set pager_stop
 
 # Sort messages with the most recently received starting at the top.
 set sort = "reverse-threads"
+set sort_aux = "last-date-received"
 
 # Allow editing headers when composing a message.
 set edit_headers
