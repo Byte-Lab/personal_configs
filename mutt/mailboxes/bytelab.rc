@@ -11,7 +11,7 @@ set from = "david@bytelab.codes"
 # echo -n 'mypassword' | gpg --encrypt -r void@manifault.com > ~/.personal_configs/mutt/mailboxes/bytelab.gpg
 
 # IMAP / SMTP password.
-set my_password = "`gpg --batch -q --decrypt -r void@manifault.com ~/.personal_configs/mutt/mailboxes/bytelab.gpg`"
+set my_password = `gpg --batch -q --decrypt -r "$GPG_USER_ID" ~/.personal_configs/mutt/mailboxes/bytelab.gpg`
 
 set imap_user = "david@bytelab.codes"
 set imap_pass = $my_password
