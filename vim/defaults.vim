@@ -50,6 +50,7 @@ set hlsearch
 
 " Enable basic vim syntax coloring.
 set syntax=y
+syntax on
 
 " Enable number
 set number

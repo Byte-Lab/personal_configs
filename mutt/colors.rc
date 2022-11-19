@@ -24,16 +24,16 @@ color hdrdefault        cyan                default
 color bold              green               black  
 color underline         yellow              black 
 
-color index_flags       black               white           ~D  
-color index_flags       green               default         ~g 
-color index_flags       brightgreen         default         ~G 
-color index_flags       yellow              default         ~N
+#color index_flags       black               white           ~D  
+#color index_flags       green               default         ~g 
+#color index_flags       brightgreen         default         ~G 
+#color index_flags       yellow              default         ~N
 
-color index_author 	color35 	    default '.*'   # FG: SpringGreen3 / BG: default
+#color index_author 	color35 	    default '.*'   # FG: SpringGreen3 / BG: default
 
-color index_number      green               default
-color index_date        cyan                default 
-color index_size        cyan                default
+#color index_number      green               default
+#color index_date        cyan                default 
+#color index_size        cyan                default
 
 color header            brightcyan          default        '^From:'
 color header            brightcyan          default        '^Subject:'

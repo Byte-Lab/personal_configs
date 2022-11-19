@@ -7,8 +7,10 @@ set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S "
 
 # Checks for mail stats (read, unread, etc) in the sidebar. This is pretty
 # performance intensive, so we stick with a longer interval for checking.
-set mail_check_stats
-set mail_check_stats_interval = 60
+#set mail_check_stats
+#set mail_check_stats_interval = 60
+set mail_check = 6000
+unset mail_check_recent
 
 # Alphabetic sorting.
 set sidebar_sort_method = "alpha"

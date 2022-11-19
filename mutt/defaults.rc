@@ -68,3 +68,8 @@ set abort_nosubject = ask-no
 
 # Just don't even bother -- tmux will tell us when a new message has arrived.
 set new_mail_command=""
+
+# Set timeout to something reasonable so that we don't send IMAP NOOPs every
+# time we give any input to mutt.
+set timeout = 60
+set imap_keepalive = 30
