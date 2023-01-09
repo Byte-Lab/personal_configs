@@ -18,7 +18,8 @@ unset trash
 set sendmail = "/usr/bin/msmtp"
 
 # TLS all the way
-set ssl_force_tls = yes
+set ssl_force_tls=yes
+set ssl_starttls=yes
 
 # Source the mailbox we're using at the moment.
 source "$PERSONAL_MUTT_DIR/mailboxes/$MUTT_MAILBOX.rc"

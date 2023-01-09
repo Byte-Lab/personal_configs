@@ -44,6 +44,7 @@ let g:gutentags_ctags_exclude = [
       \ 'cache',
       \ 'compiled',
       \ 'docs',
+      \ 'Documentation',
       \ 'example',
       \ 'bundle',
       \ 'vendor',
