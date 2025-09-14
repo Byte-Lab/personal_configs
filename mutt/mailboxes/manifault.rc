@@ -11,10 +11,9 @@ set from = "void@manifault.com"
 # echo -n 'mypassword' | gpg --encrypt -r void@manifault.com > ~/.personal_configs/mutt/mailboxes/manifault.gpg
 
 # IMAP / SMTP password.
-set my_password = `gpg --batch -q --decrypt -r "$GPG_USER_ID" ~/.personal_configs/mutt/mailboxes/manifault.gpg`
+set imap_user = "void@manifault.com"
+set imap_oauth_refresh_command = "/home/void/.personal_configs/bin/imap_manifault.sh"
+set imap_authenticators = "oauthbearer"
 
-set imap_user = "dcvernet@gmail.com"
-set imap_pass = $my_password
-
-set smtp_url = "smtp://dcvernet@gmail.com@$MUTT_SMTP_URL/"
-set smtp_pass = $my_password
+#set smtp_url = "smtp://dcvernet@gmail.com@$MUTT_SMTP_URL/"
+#set smtp_pass = $my_password

@@ -43,12 +43,12 @@ color body              brightwhite         default        "([0-2][0-9]|[0-9]|[1
 color body              brightwhite         default        "([0-3])?[0-9]\\.([0-1])?[0-9]\\.([1-2][0-9])?[0-9][0-9]"
 color body              brightgreen         default        "(^| )_[[:print:]]+_[ \n]"
 color body              brightred           default        "(^| )\\*[[:print:]]+\\*[,.?!]?[ \n]"
-color body              brightdefault       default        "^[[:blank:]]*-[[:print:]]+$"
-color body              brightdefault       default        "^[[:blank:]]*\\*[[:print:]]+$"
-color body              brightdefault       blue           "^=+[[:print:]]+$"
+color body              brightblue          default        "^[[:blank:]]*-[[:print:]]+$"
+color body              brightblue          default        "^[[:blank:]]*\\*[[:print:]]+$"
+color body              brightblue          blue           "^=+[[:print:]]+$"
 color body              default             blue           "^===+$"
 color body              default             blue           "^---+$"
-color body              brightdefault       blue           "^#+[[:print:]]+$"
+color body              brightblue          blue           "^#+[[:print:]]+$"
 
 color quoted     magenta        default 
 color quoted1    red            default 

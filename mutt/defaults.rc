@@ -55,7 +55,9 @@ set index_format = " %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
 set hidden_host = yes
 
 # Make the envelope sender the same as the From: address.
-set use_envelope_from = yes
+#set use_envelope_from = yes
+set use_envelope_from = no
+#set envelope_from = yes
 
 # Always set the From: field (obviously).
 set use_from = yes
@@ -74,4 +76,4 @@ set new_mail_command=""
 set timeout = 60
 set imap_keepalive = 30
 
-set message_id_format = "<%Y%02m%02d%02H%02M%02S.G%c%p@%f>"
+#set message_id_format = "<%Y%02m%02d%02H%02M%02S.G%c%p@%f>"
