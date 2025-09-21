@@ -16,6 +16,7 @@ alias flipkeys="set org.gnome.desktop.input-sources xkb-options \[\'caps:escape\
 
 # X variant:
 # alias flipkeys="setxkbmap -option caps:swapescape"
+export PATH="$PATH:/snap/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/intel/oneapi/vtune/latest/bin64"
 export PATH="$PATH:$UPSTREAM_DIR/sched_ext/tools/perf"
@@ -26,15 +27,11 @@ export PATH="$PATH:$UPSTREAM_DIR/trace-cmd/tracecmd"
 #export PATH="$PATH:$UPSTREAM_DIR/virtme-ng/virtme/guest/bin"
 export PATH="$PATH:$UPSTREAM_DIR/perfetto/out/linux"
 export PATH="$PATH:$UPSTREAM_DIR/vapormark/bin"
+export PATH="$PATH:$PERSONAL_CONFIGS_DIR/bin"
 
 #export GPG_USER_ID="David Vernet <void@manifault.com>"
 export GPG_USER_ID="F5504C7B7B8107B40EF9E97AA1148BB3207BCC33"
 export MYGKEY="F5504C7B7B8107B40EF9E97AA1148BB3207BCC33"
-
-export MUTT_IMAP_URL="imap.gmail.com:993"
-export MUTT_SMTP_URL="smtp.gmail.com:587"
-
-export MUTT_MAILBOX=manifault
 
 function ls() {
 	exa --color=always $@
@@ -82,8 +79,8 @@ alias pcd="cd $UPSTREAM_DIR/linux-pm"
 
 alias swapscreen="xrandr --output DP-5 --right-of DP-7"
 
-alias editrc="vim ~/.bashrc"
-alias showrc="bat ~/.bashrc"
+alias editrc="nvim $PERSONAL_BASH_DIR/init.bash"
+alias showrc="bat $PERSONAL_BASH_DIR/init.bash"
 alias gb="git branch"
 
 #export PATH="/home/void/upstream/in_path/llvm/latest/bin:$PATH"
@@ -339,4 +336,8 @@ function bdbolt() {
 }
 function runepic() {
 	flatpak run com.heroicgameslauncher.hgl $@
+}
+
+function vim() {
+	nvim $@
 }

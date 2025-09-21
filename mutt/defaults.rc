@@ -6,14 +6,16 @@
 set pager_stop
 
 # Sort messages with the most recently received starting at the top.
-set sort = "reverse-threads"
-set sort_aux = "last-date-received"
+set use_threads = yes
+#set sort = "reverse-threads"
+set sort = "reverse-date-received"
+#set sort_aux = "last-date-received"
 
 # Allow editing headers when composing a message.
 set edit_headers
 
 # Obviously
-set editor = "vim"
+set editor = "nvim"
 
 # Remember to `mkdir -p ~/.mutt/hcache` first:
 set header_cache = "~/.mutt/hcache"
