@@ -341,3 +341,7 @@ function runepic() {
 function vim() {
 	nvim $@
 }
+
+function gpt() {
+	chatgpt --api-key "$(gpg --batch -q --decrypt -r $GPG_USER_ID $PERSONAL_CONFIGS_DIR/secrets/chatgpt.gpg)" $@
+}
