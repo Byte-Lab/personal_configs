@@ -12,7 +12,7 @@ set from = "void@manifault.com"
 
 # IMAP / SMTP password.
 set imap_user = "void@manifault.com"
-set imap_oauth_refresh_command = "/home/void/.personal_configs/bin/imap_manifault.sh"
+set imap_oauth_refresh_command = "/home/void/.personal_configs/bin/mutt_manifault.sh"
 set imap_authenticators = "oauthbearer"
 
 #set smtp_url = "smtp://dcvernet@gmail.com@$MUTT_SMTP_URL/"
