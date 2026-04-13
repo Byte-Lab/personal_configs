@@ -76,11 +76,13 @@ alias tcd="cd $UPSTREAM_DIR/tip"
 alias vcd="cd $UPSTREAM_DIR/virtme-ng"
 alias vpcd="cd $UPSTREAM_DIR/vapormark"
 alias pcd="cd $UPSTREAM_DIR/linux-pm"
+alias mcd="cd $UPSTREAM_DIR/monocle"
+alias icd="cd $UPSTREAM_DIR/Infera"
 
 alias swapscreen="xrandr --output DP-5 --right-of DP-7"
 
 alias editrc="nvim $PERSONAL_BASH_DIR/init.bash"
-alias showrc="bat $PERSONAL_BASH_DIR/init.bash"
+alias showrc="batcat $PERSONAL_BASH_DIR/init.bash"
 alias gb="git branch"
 
 #export PATH="/home/void/upstream/in_path/llvm/latest/bin:$PATH"
@@ -125,6 +127,15 @@ alias lmkae=lmake
 alias kmake="lmake -j14 $@"
 alias kmkae="lmake -j14 $@"
 alias bigtest="lmake -j W=1 > /tmp/build.out 2> /tmp/build.out"
+
+
+function unlock_pgp() {
+	gpg --batch -q --decrypt -r $GPG_USER_ID $PERSONAL_CONFIGS_DIR/secrets/claude_api_key.gpg > /dev/null
+}
+
+function set_anth_key() {
+	export ANTHROPIC_API_KEY="`gpg --batch -q --decrypt -r $GPG_USER_ID $PERSONAL_CONFIGS_DIR/secrets/claude_api_key.gpg`"
+}
 
 function vi() {
 	vim $@
