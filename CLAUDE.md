@@ -36,13 +36,15 @@ The bash config is heavily oriented around Linux kernel and sched_ext developmen
 ## Bootstrap a New Machine
 
 ```bash
-./bin/bootstrap.sh
+./bin/bootstrap.sh                    # everything
+./bin/bootstrap.sh shell git tmux     # skip mutt
 ```
 
-Idempotent — safe to re-run. It:
-- Appends source lines to `~/.bashrc` (skips if already present)
-- Symlinks `~/.gitconfig`, `~/.tmux.conf`, `~/.muttrc`, `~/.msmtprc`, `~/.mailcap` (backs up existing files)
-- Creates mutt cache directories (`~/.mutt/hcache`, `~/.mutt/mcache`)
+Idempotent — safe to re-run. Modules: `shell`, `git`, `tmux`, `mutt`. No args = all modules. It:
+- `shell` — appends source lines to `~/.bashrc` (skips if already present)
+- `git` — symlinks `~/.gitconfig`
+- `tmux` — symlinks `~/.tmux.conf`
+- `mutt` — symlinks `~/.muttrc`, `~/.msmtprc`, `~/.mailcap`; creates cache directories
 
 ## Email Account System
 
