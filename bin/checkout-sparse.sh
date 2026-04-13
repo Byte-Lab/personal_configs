@@ -19,8 +19,8 @@ set -euo pipefail
 REPO="git@github.com:Decave/personal_configs.git"
 DEST="$HOME/.personal_configs"
 
-ALL_MODULES=(shell git tmux mutt)
-DEFAULT_MODULES=(shell git tmux)
+ALL_MODULES=(shell git tmux gpg mutt)
+DEFAULT_MODULES=(shell git tmux gpg)
 
 die() { echo "Error: $*" >&2; exit 1; }
 
@@ -52,6 +52,7 @@ add_paths() {
 		shell) PATHS+=(bash bin/bootstrap.sh) ;;
 		git)   PATHS+=(gitconfig) ;;
 		tmux)  PATHS+=(tmux) ;;
+		gpg)   PATHS+=(gpg) ;;
 		mutt)  PATHS+=(mutt accounts secrets bin/oauth2.py bin/mutt_oauth.sh bin/add_mutt_account.sh) ;;
 	esac
 }

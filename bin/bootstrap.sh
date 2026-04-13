@@ -18,7 +18,7 @@ set -euo pipefail
 
 CONFIGS_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
-ALL_MODULES=(shell git tmux mutt)
+ALL_MODULES=(shell git tmux gpg mutt)
 
 info()  { echo "  [+] $*"; }
 skip()  { echo "  [-] $* (already done)"; }
@@ -116,6 +116,23 @@ fi
 if has_module tmux; then
 	echo "=== Tmux ==="
 	link_config "$CONFIGS_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
+	echo ""
+fi
+
+# ---------------------------------------------------------------------------
+# GPG
+# ---------------------------------------------------------------------------
+if has_module gpg; then
+	echo "=== GPG ==="
+
+	GNUPG_DIR="$HOME/.gnupg"
+	if [ ! -d "$GNUPG_DIR" ]; then
+		mkdir -m 700 "$GNUPG_DIR"
+		info "created $GNUPG_DIR"
+	fi
+
+	link_config "$CONFIGS_DIR/gpg/gpg-agent.conf" "$GNUPG_DIR/gpg-agent.conf"
+
 	echo ""
 fi
 

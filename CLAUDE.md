@@ -12,6 +12,7 @@ Personal dotfiles and configuration for David Vernet (`void@manifault.com`). Thi
 - `tmux/` — tmux config with C-t prefix (not C-b), vim-style navigation, 256-color
 - `mutt/` — Neomutt config (muttrc, msmtprc, GPG, colors, sidebar, keybindings)
 - `accounts/` — Per-account email configs (account.conf + muttrc.rc per account)
+- `gpg/` — GPG agent config (gpg-agent.conf: 8h cache TTL, pinentry-tty, SSH support)
 - `bin/` — Helper scripts: `bootstrap.sh`, `mutt_oauth.sh`, `add_mutt_account.sh`, `oauth2.py`
 - `secrets/` — GPG-encrypted credentials (API keys, OAuth tokens). Never commit plaintext secrets.
 - `gitconfig` — Shared git config (symlinked to `~/.gitconfig` by bootstrap)
@@ -38,7 +39,7 @@ The bash config is heavily oriented around Linux kernel and sched_ext developmen
 For machines that don't need email/secrets (e.g. work machines), use sparse-checkout to avoid materializing those files on disk:
 
 ```bash
-# Sparse clone (default: shell, git, tmux — no secrets on disk)
+# Sparse clone (default: shell, git, tmux, gpg — no secrets on disk)
 curl -sL <raw-url>/bin/checkout-sparse.sh | bash
 # Full clone with everything
 ./bin/checkout-sparse.sh all
@@ -51,10 +52,11 @@ Then run the bootstrap script with matching modules:
 ./bin/bootstrap.sh shell git tmux     # skip mutt
 ```
 
-Idempotent — safe to re-run. Modules: `shell`, `git`, `tmux`, `mutt`. No args = all modules. It:
+Idempotent — safe to re-run. Modules: `shell`, `git`, `tmux`, `gpg`, `mutt`. No args = all modules. It:
 - `shell` — appends source lines to `~/.bashrc` (skips if already present)
 - `git` — symlinks `~/.gitconfig`
 - `tmux` — symlinks `~/.tmux.conf`
+- `gpg` — symlinks `~/.gnupg/gpg-agent.conf` (creates `~/.gnupg` with 700 perms if needed)
 - `mutt` — symlinks `~/.muttrc`, `~/.msmtprc`, `~/.mailcap`; creates cache directories
 
 ## Email Account System
