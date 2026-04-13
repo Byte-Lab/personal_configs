@@ -1,0 +1,8 @@
+# vim: syntax=neomuttrc
+# manifault account — void@manifault.com
+
+set realname = "David Vernet"
+set from = "void@manifault.com"
+set imap_user = "void@manifault.com"
+set imap_oauth_refresh_command = "/home/void/.personal_configs/bin/mutt_oauth.sh manifault"
+set imap_authenticators = "oauthbearer"

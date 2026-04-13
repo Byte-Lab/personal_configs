@@ -1,0 +1,8 @@
+# vim: syntax=neomuttrc
+# dcvernet account — dcvernet@gmail.com
+
+set realname = "David Vernet"
+set from = "dcvernet@gmail.com"
+set imap_user = "dcvernet@gmail.com"
+set imap_oauth_refresh_command = "/home/void/.personal_configs/bin/mutt_oauth.sh dcvernet"
+set imap_authenticators = "oauthbearer"
