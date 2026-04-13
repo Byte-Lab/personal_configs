@@ -4,22 +4,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Personal dotfiles and configuration for David Vernet (`void@manifault.com`). This repo is symlinked/sourced into the home directory via `bin/bootstrap.sh`, which appends sourcing lines to `~/.bashrc` and symlinks mutt/msmtp configs.
+Personal dotfiles and configuration for David Vernet (`void@manifault.com`). This repo is symlinked/sourced into the home directory via `bin/bootstrap.sh`.
 
 ## Repository Structure
 
 - `bash/` — Shell configuration, sourced via `main.bash` in order: `environ.bash` → `fzf.bash` → `init.bash` → `mutt.bash`
-- `vim/` — Neovim config, sourced via `main.vim` which loads: plugins → defaults → keybindings → plugin configs
 - `tmux/` — tmux config with C-t prefix (not C-b), vim-style navigation, 256-color
-- `mutt/` — Neomutt config for Gmail (manifault + dcvernet accounts) via IMAP/SMTP with GPG encryption
-- `bin/` — Helper scripts: `bootstrap.sh`, OAuth2 token helpers for mutt
+- `mutt/` — Neomutt config (muttrc, msmtprc, GPG, colors, sidebar, keybindings)
+- `accounts/` — Per-account email configs (account.conf + muttrc.rc per account)
+- `bin/` — Helper scripts: `bootstrap.sh`, `mutt_oauth.sh`, `add_mutt_account.sh`, `oauth2.py`
 - `secrets/` — GPG-encrypted credentials (API keys, OAuth tokens). Never commit plaintext secrets.
+- `gitconfig` — Shared git config (symlinked to `~/.gitconfig` by bootstrap)
 
 ## Key Environment Variables
 
 Defined in `bash/environ.bash`, used throughout:
 - `PERSONAL_CONFIGS_DIR` — path to this repo (`~/.personal_configs`)
-- `PERSONAL_BASH_DIR`, `PERSONAL_VIM_DIR`, `PERSONAL_TMUX_DIR`, `PERSONAL_MUTT_DIR` — subdirectory paths
+- `PERSONAL_BASH_DIR`, `PERSONAL_TMUX_DIR`, `PERSONAL_MUTT_DIR` — subdirectory paths
 - `UPSTREAM_DIR` — `~/upstream`, where kernel trees and dev projects live
 
 ## Context: Linux Kernel Development
@@ -38,7 +39,10 @@ The bash config is heavily oriented around Linux kernel and sched_ext developmen
 ./bin/bootstrap.sh
 ```
 
-This appends `PERSONAL_CONFIGS_DIR` export and source lines to `~/.bashrc`, and symlinks `~/.muttrc` and `~/.msmtprc`.
+Idempotent — safe to re-run. It:
+- Appends source lines to `~/.bashrc` (skips if already present)
+- Symlinks `~/.gitconfig`, `~/.tmux.conf`, `~/.muttrc`, `~/.msmtprc`, `~/.mailcap` (backs up existing files)
+- Creates mutt cache directories (`~/.mutt/hcache`, `~/.mutt/mcache`)
 
 ## GPG
 
