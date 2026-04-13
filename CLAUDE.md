@@ -35,6 +35,17 @@ The bash config is heavily oriented around Linux kernel and sched_ext developmen
 
 ## Bootstrap a New Machine
 
+For machines that don't need email/secrets (e.g. work machines), use sparse-checkout to avoid materializing those files on disk:
+
+```bash
+# Sparse clone (default: shell, git, tmux — no secrets on disk)
+curl -sL <raw-url>/bin/checkout-sparse.sh | bash
+# Full clone with everything
+./bin/checkout-sparse.sh all
+```
+
+Then run the bootstrap script with matching modules:
+
 ```bash
 ./bin/bootstrap.sh                    # everything
 ./bin/bootstrap.sh shell git tmux     # skip mutt
