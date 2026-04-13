@@ -44,6 +44,20 @@ Idempotent — safe to re-run. It:
 - Symlinks `~/.gitconfig`, `~/.tmux.conf`, `~/.muttrc`, `~/.msmtprc`, `~/.mailcap` (backs up existing files)
 - Creates mutt cache directories (`~/.mutt/hcache`, `~/.mutt/mcache`)
 
+## Email Account System
+
+Accounts are config-driven under `accounts/<name>/`:
+- `account.conf` — sourceable shell vars (EMAIL, CLIENT_ID, REALNAME, IMAP/SMTP URLs)
+- `muttrc.rc` — mutt-specific settings (from, imap_user, imap_authenticators)
+
+All OAuth2 accounts use a single `bin/mutt_oauth.sh <account>` script which reads `account.conf`, decrypts secrets from `secrets/oauth_secret_<account>.gpg` and `secrets/oauth_<account>_refresh_token.gpg`, and returns an access token via `oauth2.py`.
+
+Key commands:
+- `pickmutt` — fzf picker that unlocks GPG then launches neomutt for the selected account
+- `bin/add_mutt_account.sh <name>` — interactive wizard to onboard a new account (prompts for creds, runs OAuth2 dance, encrypts secrets, creates config files, appends msmtp block)
+
+SMTP is handled by msmtp (`mutt/msmtprc`), with one account block per email that calls the same `mutt_oauth.sh`.
+
 ## GPG
 
-Secrets are encrypted with GPG key `F5504C7B7B8107B40EF9E97AA1148BB3207BCC33`. The `unlock_pgp` and `set_anth_key` functions in `init.bash` decrypt secrets at runtime. Never store plaintext secrets in this repo.
+Secrets are encrypted with GPG key `F5504C7B7B8107B40EF9E97AA1148BB3207BCC33`. The `unlock_pgp` and `set_anth_key` functions in `init.bash` decrypt secrets at runtime. `pickmutt` triggers a non-batch GPG decrypt before launching neomutt to ensure the key is unlocked. Never store plaintext secrets in this repo.
