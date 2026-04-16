@@ -76,9 +76,10 @@ else
 	echo "Modules: ${MODULES[*]}"
 	echo ""
 
-	git clone --sparse "$REPO" "$DEST"
+	git clone --no-checkout "$REPO" "$DEST"
 	cd "$DEST"
-	git sparse-checkout set "${PATHS[@]}"
+	git sparse-checkout set --no-cone "${PATHS[@]}"
+	git checkout
 fi
 
 echo ""
