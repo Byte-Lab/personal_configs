@@ -1,0 +1,29 @@
+#
+# local.bash
+#
+# Host-specific aliases, functions, and environment. NOT tracked by git —
+# copy this file to `local.bash` and edit freely. Sourced last from main.bash,
+# so it can override or extend anything defined in the shared configs.
+#
+# Typical contents:
+#   - PATH additions for toolchains that only exist on this machine
+#   - `cd` aliases to projects under $UPSTREAM_DIR (or elsewhere)
+#   - Build wrappers specific to the work you do on this host
+#   - Display / hardware tweaks (xrandr, monitor layouts, etc.)
+#
+
+# ---- Examples ----
+
+# PATH additions
+# export PATH="$PATH:$UPSTREAM_DIR/some-project/bin"
+
+# Project cd aliases
+# alias pcd="cd $UPSTREAM_DIR/some-project"
+
+# Build wrappers
+# function mybuild() {
+# 	make -j$(nproc) "$@"
+# }
+
+# Host-specific env vars
+# export FOO_HOME="$HOME/foo"

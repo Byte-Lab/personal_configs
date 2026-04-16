@@ -8,7 +8,7 @@ Personal dotfiles and configuration for David Vernet (`void@manifault.com`). Thi
 
 ## Repository Structure
 
-- `bash/` — Shell configuration, sourced via `main.bash` in order: `environ.bash` → `fzf.bash` → `init.bash` → `mutt.bash`
+- `bash/` — Shell configuration, sourced via `main.bash` in order: `environ.bash` → `fzf.bash` → `init.bash` → `mutt.bash` → optional `local.bash` (untracked, host-specific). Copy `bash/local.bash.example` to `bash/local.bash` to add per-machine aliases/functions without touching shared config.
 - `tmux/` — tmux config with C-t prefix (not C-b), vim-style navigation, 256-color
 - `mutt/` — Neomutt config (muttrc, msmtprc, GPG, colors, sidebar, keybindings)
 - `accounts/` — Per-account email configs (account.conf + muttrc.rc per account)
