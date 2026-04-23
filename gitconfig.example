@@ -1,0 +1,24 @@
+# Template for the host-local gitconfig. NOT used directly — copy this file
+# to `gitconfig` (which is untracked) and edit as needed, then run
+# `./bin/bootstrap.sh git` to symlink it to ~/.gitconfig.
+#
+# Typical per-host adjustments:
+#   - email / signingkey (personal vs work identity)
+#   - corporate SSL certs under [http "..."] blocks
+#   - editor / pager preferences
+
+[user]
+	signingkey = F5504C7B7B8107B40EF9E97AA1148BB3207BCC33
+	email = void@manifault.com
+	name = David Vernet
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[core]
+	editor = nvim
+[color]
+	status = auto
+	diff = auto
+[init]
+	defaultBranch = main

@@ -50,7 +50,7 @@ PATHS=(CLAUDE.md .gitignore)
 add_paths() {
 	case "$1" in
 		shell) PATHS+=(bash bin/bootstrap.sh) ;;
-		git)   PATHS+=(gitconfig) ;;
+		git)   PATHS+=(gitconfig.example) ;;
 		tmux)  PATHS+=(tmux) ;;
 		gpg)   PATHS+=(gpg) ;;
 		mutt)  PATHS+=(mutt accounts secrets bin/oauth2.py bin/mutt_oauth.sh bin/add_mutt_account.sh) ;;

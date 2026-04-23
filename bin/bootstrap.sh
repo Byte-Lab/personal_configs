@@ -106,7 +106,11 @@ fi
 # ---------------------------------------------------------------------------
 if has_module git; then
 	echo "=== Git ==="
-	link_config "$CONFIGS_DIR/gitconfig" "$HOME/.gitconfig"
+	if [ -f "$CONFIGS_DIR/gitconfig" ]; then
+		link_config "$CONFIGS_DIR/gitconfig" "$HOME/.gitconfig"
+	else
+		warn "$CONFIGS_DIR/gitconfig not found — copy gitconfig.example to gitconfig and edit, then re-run: ./bin/bootstrap.sh git"
+	fi
 	echo ""
 fi
 

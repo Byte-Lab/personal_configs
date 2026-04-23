@@ -15,7 +15,7 @@ Personal dotfiles and configuration for David Vernet (`void@manifault.com`). Thi
 - `gpg/` — GPG agent config (gpg-agent.conf: 8h cache TTL, pinentry-tty, SSH support)
 - `bin/` — Helper scripts: `bootstrap.sh`, `mutt_oauth.sh`, `add_mutt_account.sh`, `oauth2.py`
 - `secrets/` — GPG-encrypted credentials (API keys, OAuth tokens). Never commit plaintext secrets.
-- `gitconfig` — Shared git config (symlinked to `~/.gitconfig` by bootstrap)
+- `gitconfig` — Host-local git config (untracked). Copy `gitconfig.example` to `gitconfig` and edit per host (email, signing key, corporate SSL certs, etc.), then bootstrap symlinks it to `~/.gitconfig`.
 
 ## Key Environment Variables
 
@@ -54,7 +54,7 @@ Then run the bootstrap script with matching modules:
 
 Idempotent — safe to re-run. Modules: `shell`, `git`, `tmux`, `gpg`, `mutt`. No args = all modules. It:
 - `shell` — appends source lines to `~/.bashrc` (skips if already present)
-- `git` — symlinks `~/.gitconfig`
+- `git` — symlinks `~/.gitconfig` if `gitconfig` exists; otherwise warns with instructions to copy `gitconfig.example`
 - `tmux` — symlinks `~/.tmux.conf`
 - `gpg` — symlinks `~/.gnupg/gpg-agent.conf` (creates `~/.gnupg` with 700 perms if needed)
 - `mutt` — symlinks `~/.muttrc`, `~/.msmtprc`, `~/.mailcap`; creates cache directories
