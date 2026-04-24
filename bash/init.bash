@@ -8,7 +8,7 @@
 PS1='[\u@\h \W]\$ '
 
 set -o vi
-export EDITOR=vim
+export EDITOR=nvim
 export GPG_TTY=$(tty)
 
 # Wayland variant:
