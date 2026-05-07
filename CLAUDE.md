@@ -13,7 +13,8 @@ Personal dotfiles and configuration for David Vernet (`void@manifault.com`). Thi
 - `mutt/` — Neomutt config (muttrc, msmtprc, GPG, colors, sidebar, keybindings)
 - `accounts/` — Per-account email configs (account.conf + muttrc.rc per account)
 - `gpg/` — GPG agent config (gpg-agent.conf: 8h cache TTL, pinentry-tty, SSH support)
-- `bin/` — Helper scripts: `bootstrap.sh`, `mutt_oauth.sh`, `add_mutt_account.sh`, `oauth2.py`
+- `nvim/` — Neovim config, based on `kickstart.nvim`. Symlinked as a directory to `~/.config/nvim`. `lazy-lock.json` is tracked so plugin versions pin across machines.
+- `bin/` — Helper scripts: `bootstrap.sh`, `checkout-sparse.sh`, `mutt_oauth.sh`, `add_mutt_account.sh`, `oauth2.py`
 - `secrets/` — GPG-encrypted credentials (API keys, OAuth tokens). Never commit plaintext secrets.
 - `gitconfig` — Host-local git config (untracked). Copy `gitconfig.example` to `gitconfig` and edit per host (email, signing key, corporate SSL certs, etc.), then bootstrap symlinks it to `~/.gitconfig`.
 
@@ -39,7 +40,7 @@ The bash config is heavily oriented around Linux kernel and sched_ext developmen
 For machines that don't need email/secrets (e.g. work machines), use sparse-checkout to avoid materializing those files on disk:
 
 ```bash
-# Sparse clone (default: shell, git, tmux, gpg — no secrets on disk)
+# Sparse clone (default: shell, git, tmux, gpg, nvim — no secrets on disk)
 curl -sL <raw-url>/bin/checkout-sparse.sh | bash
 # Full clone with everything
 ./bin/checkout-sparse.sh all
@@ -52,11 +53,12 @@ Then run the bootstrap script with matching modules:
 ./bin/bootstrap.sh shell git tmux     # skip mutt
 ```
 
-Idempotent — safe to re-run. Modules: `shell`, `git`, `tmux`, `gpg`, `mutt`. No args = all modules. It:
+Idempotent — safe to re-run. Modules: `shell`, `git`, `tmux`, `gpg`, `nvim`, `mutt`. No args = all modules. It:
 - `shell` — appends source lines to `~/.bashrc` (skips if already present)
 - `git` — symlinks `~/.gitconfig` if `gitconfig` exists; otherwise warns with instructions to copy `gitconfig.example`
 - `tmux` — symlinks `~/.tmux.conf`
 - `gpg` — symlinks `~/.gnupg/gpg-agent.conf` (creates `~/.gnupg` with 700 perms if needed)
+- `nvim` — symlinks `~/.config/nvim` to `nvim/` (directory symlink); on first `nvim` launch, `lazy.nvim` installs plugins per `lazy-lock.json`
 - `mutt` — symlinks `~/.muttrc`, `~/.msmtprc`, `~/.mailcap`; creates cache directories
 
 ## Email Account System

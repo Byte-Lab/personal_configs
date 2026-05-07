@@ -12,13 +12,13 @@
 #   ./bin/bootstrap.sh shell git tmux       # skip mutt
 #   ./bin/bootstrap.sh shell                # shell only
 #
-# Available modules: shell, git, tmux, mutt
+# Available modules: shell, git, tmux, gpg, nvim, mutt
 
 set -euo pipefail
 
 CONFIGS_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
-ALL_MODULES=(shell git tmux gpg mutt)
+ALL_MODULES=(shell git tmux gpg nvim mutt)
 
 info()  { echo "  [+] $*"; }
 skip()  { echo "  [-] $* (already done)"; }
@@ -137,6 +137,15 @@ if has_module gpg; then
 
 	link_config "$CONFIGS_DIR/gpg/gpg-agent.conf" "$GNUPG_DIR/gpg-agent.conf"
 
+	echo ""
+fi
+
+# ---------------------------------------------------------------------------
+# Neovim
+# ---------------------------------------------------------------------------
+if has_module nvim; then
+	echo "=== Neovim ==="
+	link_config "$CONFIGS_DIR/nvim" "$HOME/.config/nvim"
 	echo ""
 fi
 
