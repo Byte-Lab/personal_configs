@@ -6,6 +6,7 @@
 #
 
 export UPSTREAM_DIR="$HOME/upstream"
+export PROPRIETARY_DIR="$HOME/proprietary"
 export PERSONAL_CONFIGS_DIR="$HOME/.personal_configs"
 export PERSONAL_TMUX_DIR="$PERSONAL_CONFIGS_DIR/tmux"
 export PERSONAL_MUTT_DIR="$PERSONAL_CONFIGS_DIR/mutt"
